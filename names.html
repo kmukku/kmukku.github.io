@@ -91425,7 +91425,7 @@
         const uniqueAbbreviations = abbreviated.reduce((a, c) => (a[c.abbr] = a[c.abbr] ? (a[c.abbr].count += c.count, a[c.abbr]) : c, a), {});
         const uniqueAbbreviationsSorted = Object.values(uniqueAbbreviations).sort((a, b) => b.count - a.count);
         const address = document.getElementById('osoite').value;
-        let tableHtml = `<table class="table table-striped table-bordered table-sm">${uniqueAbbreviationsSorted.reduce((c, o) => c += `<tr><td><span>${o.abbr}**, ${address}</span><button class="copy btn btn-secondary btn-sm float-right">kopioi</button></td></tr>`, '')}</table>`;
+        let tableHtml = `<table class="table table-striped table-bordered table-sm">${uniqueAbbreviationsSorted.reduce((c, o) => c += `<tr><td><span>${o.abbr}*, ${address}</span><button class="copy btn btn-secondary btn-sm float-right">kopioi</button></td></tr>`, '')}</table>`;
         document.getElementById('placeholder').innerHTML = tableHtml;
         document.querySelectorAll('.copy').forEach((el) => {
             el.addEventListener('click', (event) => {
