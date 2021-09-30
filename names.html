@@ -91421,7 +91421,7 @@
         el.readOnly = storeReadOnly;
     }
     function createTable() {
-        const abbreviated = data.map(item => { return {abbr: item.lastname.trim().substring(0, 2), count: parseInt(item.count, 10)}});
+        const abbreviated = data.map(item => { return {abbr: item.lastname.trim().substring(0, 3), count: parseInt(item.count, 10)}});
         const uniqueAbbreviations = abbreviated.reduce((a, c) => (a[c.abbr] = a[c.abbr] ? (a[c.abbr].count += c.count, a[c.abbr]) : c, a), {});
         const uniqueAbbreviationsSorted = Object.values(uniqueAbbreviations).sort((a, b) => b.count - a.count);
         const address = document.getElementById('osoite').value;
